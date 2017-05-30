@@ -6,11 +6,10 @@ function onReady(){
 
   $('#enter').on('click', runProblem);
   $('#clear').on('click', removeResults);
-}//end listeners  
+}//end listeners
 
 function runProblem(){
-  console.log('enter');
-  console.log($('.mathInput').val());
+  console.log('enter click ', $('.mathInput').val());
 
   var inputToSend = {
     variable1: $('#firstNumber').val(),
@@ -22,8 +21,7 @@ function runProblem(){
     url: '/equation',
     data: inputToSend,
     success: function(response){
-      console.log('went to sever');
-      console.log(response.answer);
+      console.log('went to sever', response.answer);
       $('.results').append('<br>' + response.answer)
     }//end success
   });//end ajax
