@@ -1,19 +1,19 @@
 var express = require('express');
 var app = express();
-var path = require( 'path');
+var path = require('path');
 var bodyParser =  require('body-parser');
 
 app.use(express.static('public'));
-app.use (bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.listen( 3000, function(){
   console.log('server is up');
-})
+});//end port listener
 
 app.get('/', function(req, res){
   console.log('base url hit');
   res.sendFile(path.resolve('views/index.html'));
-});
+});//end base url
 
 app.post('/equation', function(req, res){
   console.log('post /equation hit', req.body);
@@ -35,7 +35,7 @@ app.post('/equation', function(req, res){
   } else {
       return num1 / num2;
     }
-  }
+  }//end if else
 
   res.send(answerToReturn);
-});
+});// end post to /equation

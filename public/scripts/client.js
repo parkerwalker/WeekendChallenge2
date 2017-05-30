@@ -6,7 +6,7 @@ function onReady(){
 
   $('#enter').on('click', runProblem);
   $('#clear').on('click', removeResults);
-}
+}//end listeners  
 
 function runProblem(){
   console.log('enter');
@@ -32,4 +32,4 @@ $('#firstNumber, #secondNumber').val('');
 
 function removeResults(){
   $('.results').empty();
-}
+};//end removeResults
