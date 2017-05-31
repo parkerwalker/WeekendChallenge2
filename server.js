@@ -26,16 +26,30 @@ app.post('/equation', function(req, res){
   }
   console.log(answerToReturn);
   function calculation(num1, num2, math){
-    if(math === '+'){
-      return num1 + num2;
-  } else if (math === '-'){
-      return num1 - num2;
-  } else if (math === '*'){
-      return num1 * num2;
-  } else {
-      return num1 / num2;
-    }
-  }//end if else
 
+  switch(math){
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    case '/':
+      return num1 / num2;
+      default:
+    }//end switch
+  };//calculation
   res.send(answerToReturn);
 });// end post to /equation
+
+
+
+
+
+
+
+
+
+
+
+//block
