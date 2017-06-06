@@ -3,10 +3,12 @@ var app = express();
 var path = require('path');
 var bodyParser =  require('body-parser');
 
+var port = process.env.PORT || 3000
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.listen( 3000, function(){
+app.listen( port, function(){
   console.log('server is up');
 });//end port listener
 
